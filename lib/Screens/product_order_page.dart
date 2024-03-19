@@ -10,44 +10,46 @@ class ProducetOrderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      body: SizedBox(
-        height: size.height > 1000 ? 932 : size.height,
-        width: size.width > 500 ? 430 : size.width,
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  "assets/images/background.png",
-                ),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Column(
-              children: [
-                SizedBox(
-                  width: double.infinity,
-                  height: 420,
-                  child: Image.asset(
-                    'assets/images/cof.png',
-                    fit: BoxFit.cover,
+      body: Center(
+        child: SizedBox(
+          height: size.height > 1000 ? 932 : size.height,
+          width: size.width > 500 ? 430 : size.width,
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    "assets/images/background.png",
                   ),
+                  fit: BoxFit.cover,
                 ),
-                Container(
-                  decoration: isFilter
-                      ? const BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(
-                              "assets/images/card.png",
+              ),
+              child: Column(
+                children: [
+                  SizedBox(
+                    width: double.infinity,
+                    height: 420,
+                    child: Image.asset(
+                      'assets/images/cof.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Container(
+                    decoration: isFilter
+                        ? const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(
+                                "assets/images/card.png",
+                              ),
+                              fit: BoxFit.fill,
                             ),
-                            fit: BoxFit.fill,
-                          ),
-                        )
-                      : null,
-                  child: const Details(),
-                ),
-              ],
+                          )
+                        : null,
+                    child: const Details(),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
