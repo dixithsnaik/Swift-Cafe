@@ -11,8 +11,8 @@ class ProducetOrderPage extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: SizedBox(
-        height: size.height,
-        width: size.width,
+        height: size.height > 1000 ? 932 : size.height,
+        width: size.width > 500 ? 430 : size.width,
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Container(

@@ -6,29 +6,34 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              "assets/images/background.png",
-            ),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Center(
-          child: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  "assets/images/texture.png",
-                ),
-                fit: BoxFit.cover,
+      body: SizedBox(
+        height: size.height > 1000 ? 932 : size.height,
+        width: size.width > 500 ? 430 : size.width,
+        child: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                "assets/images/background.png",
               ),
+              fit: BoxFit.cover,
             ),
-            child: const Center(
-              child: CardLogin(),
+          ),
+          child: Center(
+            child: Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    "assets/images/texture.png",
+                  ),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: const Center(
+                child: CardLogin(),
+              ),
             ),
           ),
         ),
